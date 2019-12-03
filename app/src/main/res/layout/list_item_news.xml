@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="newsItem"
+            type="com.sample.news.model.Rows" />
+
+        <variable
+            name="onClickListener"
+            type="com.sample.news.view.adapter.NewsListAdapter.OnItemClickListener" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:background="@color/background_gray"
+        android:onClick="@{()-> onClickListener.onItemClick(newsItem)}"
+        android:padding="@dimen/padding_small">
+
+        <TextView
+            android:id="@+id/heading"
+            style="@style/TextStyleMedium.Heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:Text="@{newsItem.title}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/chevron"
+            tools:text="TextView" />
+
+        <TextView
+            android:id="@+id/content"
+            style="@style/TextStyleMedium.Black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginRight="@dimen/margin_small"
+            android:Text="@{newsItem.description}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/heading"
+            app:layout_constraintRight_toLeftOf="@id/image"
+            tools:text="TextView" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="4dp"
+            android:maxHeight="80dp"
+            android:scaleType="fitCenter"
+            app:imageUrl="@{newsItem.imageHref}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/chevron"
+            app:layout_constraintTop_toBottomOf="@id/heading"
+            app:layout_constraintLeft_toRightOf="@id/content"
+            app:srcCompat="@drawable/placeholder" />
+
+
+
+        <ImageView
+            android:id="@+id/chevron"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:paddingRight="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/chevron" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

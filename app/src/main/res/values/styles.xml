@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="TextStyleNormal" parent="android:TextAppearance">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextStyleMedium" parent="android:TextAppearance">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextStyleMedium.Black" parent="android:TextAppearance">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextStyleMedium.Heading" parent="android:TextAppearance">
+        <item name="android:textColor">@color/background_blue</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextStyleBig" parent="android:TextAppearance">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>
